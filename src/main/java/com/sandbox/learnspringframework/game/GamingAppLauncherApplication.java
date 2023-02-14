@@ -1,11 +1,8 @@
-package com.sandbox.learnspringframework;
+package com.sandbox.learnspringframework.game;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import com.sandbox.learnspringframework.game.GameRunner;
-import com.sandbox.learnspringframework.game.GamingConsole;
 
 @Configuration
 @ComponentScan("com.sandbox.learnspringframework.game") // tells Spring to search for any components within a specific package
