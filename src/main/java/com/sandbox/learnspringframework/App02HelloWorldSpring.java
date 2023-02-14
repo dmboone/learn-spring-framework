@@ -1,11 +1,8 @@
 package com.sandbox.learnspringframework;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import java.util.Arrays;
 
-import com.sandbox.learnspringframework.game.GameRunner;
-import com.sandbox.learnspringframework.game.MarioGame;
-import com.sandbox.learnspringframework.game.PacManGame;
-import com.sandbox.learnspringframework.game.SuperContraGame;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
 
@@ -24,6 +21,14 @@ public class App02HelloWorldSpring {
 		System.out.println(context.getBean("person2MethodCall"));
 		System.out.println(context.getBean("person3Parameters"));
 		System.out.println(context.getBean("address2"));
-//		System.out.println(context.getBean(Address.class)); // can use the type of the bean to identify as well; can only have one bean of that type for this to work
+	
+		// How to list all beans managed by Spring Framework
+		Arrays.stream(context.getBeanDefinitionNames())
+		.forEach(System.out::println);
+		
+		// What if multiple matching beans are available?
+		System.out.println(context.getBean(Address.class)); // can use the type of the bean to identify as well; if multiple beans of that type make sure to designate primary
+		System.out.println(context.getBean(Person.class));
+		System.out.println(context.getBean("person5Qualifier"));
 	}
 }
