@@ -34,8 +34,6 @@ public class LazyInitializationLauncherApplication {
 	public static void main(String[] args) {
 		
 		try(var context = new AnnotationConfigApplicationContext(LazyInitializationLauncherApplication.class)){
-//			Arrays.stream(context.getBeanDefinitionNames())
-//				.forEach(System.out::println);
 			
 			System.out.println("Initialization of context is completed");
 			
