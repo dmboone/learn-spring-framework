@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component // could also use @Service instead since in an actual application this class may be in charge of business logic 
 public class BusinessCalculationService {
 	private DataService dataService;
 	
